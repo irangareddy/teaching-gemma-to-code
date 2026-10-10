@@ -1,0 +1,584 @@
+[
+  {
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "Teaching Gemma to Code",
+    "section": "",
+    "text": "Why this handbook\nMy advisor suggested I enter the Gemma 4 Developer Agent competition. The task: build an agent on Gemma 4 that fixes real GitHub issues, scored by whether the fix passes that issue’s tests.\nI use coding agents every day, but I wanted to know how one works inside, and to measure it instead of guessing. So I’m writing down what I learn, chapter by chapter, with the code and the scores next to it.\nEvery number in this handbook comes from a run I can point to in the experiment log. When something didn’t work, I say so.",
+    "crumbs": [
+      "Why this handbook"
+    ]
+  },
+  {
+    "objectID": "01-agent-loop.html",
+    "href": "01-agent-loop.html",
+    "title": "1  The agent loop",
+    "section": "",
+    "text": "1.1 What I want to understand",
+    "crumbs": [
+      "How agents work",
+      "<span class='chapter-number'>1</span>  <span class='chapter-title'>The agent loop</span>"
+    ]
+  },
+  {
+    "objectID": "01-agent-loop.html#what-i-want-to-understand",
+    "href": "01-agent-loop.html#what-i-want-to-understand",
+    "title": "1  The agent loop",
+    "section": "",
+    "text": "What happens between reading an issue and submitting a patch?\nHow does the model decide it is done?",
+    "crumbs": [
+      "How agents work",
+      "<span class='chapter-number'>1</span>  <span class='chapter-title'>The agent loop</span>"
+    ]
+  },
+  {
+    "objectID": "01-agent-loop.html#what-i-tried",
+    "href": "01-agent-loop.html#what-i-tried",
+    "title": "1  The agent loop",
+    "section": "1.2 What I tried",
+    "text": "1.2 What I tried",
+    "crumbs": [
+      "How agents work",
+      "<span class='chapter-number'>1</span>  <span class='chapter-title'>The agent loop</span>"
+    ]
+  },
+  {
+    "objectID": "01-agent-loop.html#what-i-learned",
+    "href": "01-agent-loop.html#what-i-learned",
+    "title": "1  The agent loop",
+    "section": "1.3 What I learned",
+    "text": "1.3 What I learned",
+    "crumbs": [
+      "How agents work",
+      "<span class='chapter-number'>1</span>  <span class='chapter-title'>The agent loop</span>"
+    ]
+  },
+  {
+    "objectID": "01-agent-loop.html#sources",
+    "href": "01-agent-loop.html#sources",
+    "title": "1  The agent loop",
+    "section": "1.4 Sources",
+    "text": "1.4 Sources",
+    "crumbs": [
+      "How agents work",
+      "<span class='chapter-number'>1</span>  <span class='chapter-title'>The agent loop</span>"
+    ]
+  },
+  {
+    "objectID": "02-tools.html",
+    "href": "02-tools.html",
+    "title": "2  Tools",
+    "section": "",
+    "text": "2.1 What I want to understand",
+    "crumbs": [
+      "How agents work",
+      "<span class='chapter-number'>2</span>  <span class='chapter-title'>Tools</span>"
+    ]
+  },
+  {
+    "objectID": "02-tools.html#what-i-want-to-understand",
+    "href": "02-tools.html#what-i-want-to-understand",
+    "title": "2  Tools",
+    "section": "",
+    "text": "How does a model call a tool, and how do tool descriptions change its choices?\nWhich tools does a coding agent actually need?",
+    "crumbs": [
+      "How agents work",
+      "<span class='chapter-number'>2</span>  <span class='chapter-title'>Tools</span>"
+    ]
+  },
+  {
+    "objectID": "02-tools.html#what-i-tried",
+    "href": "02-tools.html#what-i-tried",
+    "title": "2  Tools",
+    "section": "2.2 What I tried",
+    "text": "2.2 What I tried",
+    "crumbs": [
+      "How agents work",
+      "<span class='chapter-number'>2</span>  <span class='chapter-title'>Tools</span>"
+    ]
+  },
+  {
+    "objectID": "02-tools.html#what-i-learned",
+    "href": "02-tools.html#what-i-learned",
+    "title": "2  Tools",
+    "section": "2.3 What I learned",
+    "text": "2.3 What I learned",
+    "crumbs": [
+      "How agents work",
+      "<span class='chapter-number'>2</span>  <span class='chapter-title'>Tools</span>"
+    ]
+  },
+  {
+    "objectID": "02-tools.html#sources",
+    "href": "02-tools.html#sources",
+    "title": "2  Tools",
+    "section": "2.4 Sources",
+    "text": "2.4 Sources",
+    "crumbs": [
+      "How agents work",
+      "<span class='chapter-number'>2</span>  <span class='chapter-title'>Tools</span>"
+    ]
+  },
+  {
+    "objectID": "03-context.html",
+    "href": "03-context.html",
+    "title": "3  Context and tokens",
+    "section": "",
+    "text": "3.1 What I want to understand",
+    "crumbs": [
+      "How agents work",
+      "<span class='chapter-number'>3</span>  <span class='chapter-title'>Context and tokens</span>"
+    ]
+  },
+  {
+    "objectID": "03-context.html#what-i-want-to-understand",
+    "href": "03-context.html#what-i-want-to-understand",
+    "title": "3  Context and tokens",
+    "section": "",
+    "text": "What fits in Gemma 4’s context window, and what should stay out?\nWhy do agents lose track halfway through a task?",
+    "crumbs": [
+      "How agents work",
+      "<span class='chapter-number'>3</span>  <span class='chapter-title'>Context and tokens</span>"
+    ]
+  },
+  {
+    "objectID": "03-context.html#what-i-tried",
+    "href": "03-context.html#what-i-tried",
+    "title": "3  Context and tokens",
+    "section": "3.2 What I tried",
+    "text": "3.2 What I tried",
+    "crumbs": [
+      "How agents work",
+      "<span class='chapter-number'>3</span>  <span class='chapter-title'>Context and tokens</span>"
+    ]
+  },
+  {
+    "objectID": "03-context.html#what-i-learned",
+    "href": "03-context.html#what-i-learned",
+    "title": "3  Context and tokens",
+    "section": "3.3 What I learned",
+    "text": "3.3 What I learned",
+    "crumbs": [
+      "How agents work",
+      "<span class='chapter-number'>3</span>  <span class='chapter-title'>Context and tokens</span>"
+    ]
+  },
+  {
+    "objectID": "03-context.html#sources",
+    "href": "03-context.html#sources",
+    "title": "3  Context and tokens",
+    "section": "3.4 Sources",
+    "text": "3.4 Sources",
+    "crumbs": [
+      "How agents work",
+      "<span class='chapter-number'>3</span>  <span class='chapter-title'>Context and tokens</span>"
+    ]
+  },
+  {
+    "objectID": "04-prompts-and-skills.html",
+    "href": "04-prompts-and-skills.html",
+    "title": "4  Prompts and skills",
+    "section": "",
+    "text": "4.1 What I want to understand",
+    "crumbs": [
+      "How agents work",
+      "<span class='chapter-number'>4</span>  <span class='chapter-title'>Prompts and skills</span>"
+    ]
+  },
+  {
+    "objectID": "04-prompts-and-skills.html#what-i-want-to-understand",
+    "href": "04-prompts-and-skills.html#what-i-want-to-understand",
+    "title": "4  Prompts and skills",
+    "section": "",
+    "text": "How much does the system prompt move the score?\nWhat is a skill in Google ADK, and when does it help?",
+    "crumbs": [
+      "How agents work",
+      "<span class='chapter-number'>4</span>  <span class='chapter-title'>Prompts and skills</span>"
+    ]
+  },
+  {
+    "objectID": "04-prompts-and-skills.html#what-i-tried",
+    "href": "04-prompts-and-skills.html#what-i-tried",
+    "title": "4  Prompts and skills",
+    "section": "4.2 What I tried",
+    "text": "4.2 What I tried",
+    "crumbs": [
+      "How agents work",
+      "<span class='chapter-number'>4</span>  <span class='chapter-title'>Prompts and skills</span>"
+    ]
+  },
+  {
+    "objectID": "04-prompts-and-skills.html#what-i-learned",
+    "href": "04-prompts-and-skills.html#what-i-learned",
+    "title": "4  Prompts and skills",
+    "section": "4.3 What I learned",
+    "text": "4.3 What I learned",
+    "crumbs": [
+      "How agents work",
+      "<span class='chapter-number'>4</span>  <span class='chapter-title'>Prompts and skills</span>"
+    ]
+  },
+  {
+    "objectID": "04-prompts-and-skills.html#sources",
+    "href": "04-prompts-and-skills.html#sources",
+    "title": "4  Prompts and skills",
+    "section": "4.4 Sources",
+    "text": "4.4 Sources",
+    "crumbs": [
+      "How agents work",
+      "<span class='chapter-number'>4</span>  <span class='chapter-title'>Prompts and skills</span>"
+    ]
+  },
+  {
+    "objectID": "05-evaluation.html",
+    "href": "05-evaluation.html",
+    "title": "5  Evaluation",
+    "section": "",
+    "text": "5.1 What I want to understand",
+    "crumbs": [
+      "Measuring",
+      "<span class='chapter-number'>5</span>  <span class='chapter-title'>Evaluation</span>"
+    ]
+  },
+  {
+    "objectID": "05-evaluation.html#what-i-want-to-understand",
+    "href": "05-evaluation.html#what-i-want-to-understand",
+    "title": "5  Evaluation",
+    "section": "",
+    "text": "How does SWE-Bench-style scoring work?\nCan my local score predict the Kaggle score?\nHow many runs before a difference is real?",
+    "crumbs": [
+      "Measuring",
+      "<span class='chapter-number'>5</span>  <span class='chapter-title'>Evaluation</span>"
+    ]
+  },
+  {
+    "objectID": "05-evaluation.html#what-i-tried",
+    "href": "05-evaluation.html#what-i-tried",
+    "title": "5  Evaluation",
+    "section": "5.2 What I tried",
+    "text": "5.2 What I tried",
+    "crumbs": [
+      "Measuring",
+      "<span class='chapter-number'>5</span>  <span class='chapter-title'>Evaluation</span>"
+    ]
+  },
+  {
+    "objectID": "05-evaluation.html#what-i-learned",
+    "href": "05-evaluation.html#what-i-learned",
+    "title": "5  Evaluation",
+    "section": "5.3 What I learned",
+    "text": "5.3 What I learned",
+    "crumbs": [
+      "Measuring",
+      "<span class='chapter-number'>5</span>  <span class='chapter-title'>Evaluation</span>"
+    ]
+  },
+  {
+    "objectID": "05-evaluation.html#sources",
+    "href": "05-evaluation.html#sources",
+    "title": "5  Evaluation",
+    "section": "5.4 Sources",
+    "text": "5.4 Sources",
+    "crumbs": [
+      "Measuring",
+      "<span class='chapter-number'>5</span>  <span class='chapter-title'>Evaluation</span>"
+    ]
+  },
+  {
+    "objectID": "06-error-analysis.html",
+    "href": "06-error-analysis.html",
+    "title": "6  Error analysis",
+    "section": "",
+    "text": "6.1 What I want to understand",
+    "crumbs": [
+      "Measuring",
+      "<span class='chapter-number'>6</span>  <span class='chapter-title'>Error analysis</span>"
+    ]
+  },
+  {
+    "objectID": "06-error-analysis.html#what-i-want-to-understand",
+    "href": "06-error-analysis.html#what-i-want-to-understand",
+    "title": "6  Error analysis",
+    "section": "",
+    "text": "Why did each failed task fail: wrong file, bad patch, broken tests, timeout?\nWhich group of failures is worth fixing first?",
+    "crumbs": [
+      "Measuring",
+      "<span class='chapter-number'>6</span>  <span class='chapter-title'>Error analysis</span>"
+    ]
+  },
+  {
+    "objectID": "06-error-analysis.html#what-i-tried",
+    "href": "06-error-analysis.html#what-i-tried",
+    "title": "6  Error analysis",
+    "section": "6.2 What I tried",
+    "text": "6.2 What I tried",
+    "crumbs": [
+      "Measuring",
+      "<span class='chapter-number'>6</span>  <span class='chapter-title'>Error analysis</span>"
+    ]
+  },
+  {
+    "objectID": "06-error-analysis.html#what-i-learned",
+    "href": "06-error-analysis.html#what-i-learned",
+    "title": "6  Error analysis",
+    "section": "6.3 What I learned",
+    "text": "6.3 What I learned",
+    "crumbs": [
+      "Measuring",
+      "<span class='chapter-number'>6</span>  <span class='chapter-title'>Error analysis</span>"
+    ]
+  },
+  {
+    "objectID": "06-error-analysis.html#sources",
+    "href": "06-error-analysis.html#sources",
+    "title": "6  Error analysis",
+    "section": "6.4 Sources",
+    "text": "6.4 Sources",
+    "crumbs": [
+      "Measuring",
+      "<span class='chapter-number'>6</span>  <span class='chapter-title'>Error analysis</span>"
+    ]
+  },
+  {
+    "objectID": "07-test-first-fixes.html",
+    "href": "07-test-first-fixes.html",
+    "title": "7  First failing test",
+    "section": "",
+    "text": "7.1 What I want to understand",
+    "crumbs": [
+      "Making it better",
+      "<span class='chapter-number'>7</span>  <span class='chapter-title'>First failing test</span>"
+    ]
+  },
+  {
+    "objectID": "07-test-first-fixes.html#what-i-want-to-understand",
+    "href": "07-test-first-fixes.html#what-i-want-to-understand",
+    "title": "7  First failing test",
+    "section": "",
+    "text": "Does reproducing the bug with a failing test first improve the score?",
+    "crumbs": [
+      "Making it better",
+      "<span class='chapter-number'>7</span>  <span class='chapter-title'>First failing test</span>"
+    ]
+  },
+  {
+    "objectID": "07-test-first-fixes.html#what-i-tried",
+    "href": "07-test-first-fixes.html#what-i-tried",
+    "title": "7  First failing test",
+    "section": "7.2 What I tried",
+    "text": "7.2 What I tried",
+    "crumbs": [
+      "Making it better",
+      "<span class='chapter-number'>7</span>  <span class='chapter-title'>First failing test</span>"
+    ]
+  },
+  {
+    "objectID": "07-test-first-fixes.html#what-i-learned",
+    "href": "07-test-first-fixes.html#what-i-learned",
+    "title": "7  First failing test",
+    "section": "7.3 What I learned",
+    "text": "7.3 What I learned",
+    "crumbs": [
+      "Making it better",
+      "<span class='chapter-number'>7</span>  <span class='chapter-title'>First failing test</span>"
+    ]
+  },
+  {
+    "objectID": "07-test-first-fixes.html#sources",
+    "href": "07-test-first-fixes.html#sources",
+    "title": "7  First failing test",
+    "section": "7.4 Sources",
+    "text": "7.4 Sources",
+    "crumbs": [
+      "Making it better",
+      "<span class='chapter-number'>7</span>  <span class='chapter-title'>First failing test</span>"
+    ]
+  },
+  {
+    "objectID": "08-running-gemma.html",
+    "href": "08-running-gemma.html",
+    "title": "8  Running Gemma locally",
+    "section": "",
+    "text": "8.1 What I want to understand",
+    "crumbs": [
+      "Making it better",
+      "<span class='chapter-number'>8</span>  <span class='chapter-title'>Running Gemma locally</span>"
+    ]
+  },
+  {
+    "objectID": "08-running-gemma.html#what-i-want-to-understand",
+    "href": "08-running-gemma.html#what-i-want-to-understand",
+    "title": "8  Running Gemma locally",
+    "section": "",
+    "text": "Which Gemma 4 sizes fit on my machines, at what speed?\nWhat does quantization cost in quality?",
+    "crumbs": [
+      "Making it better",
+      "<span class='chapter-number'>8</span>  <span class='chapter-title'>Running Gemma locally</span>"
+    ]
+  },
+  {
+    "objectID": "08-running-gemma.html#what-i-tried",
+    "href": "08-running-gemma.html#what-i-tried",
+    "title": "8  Running Gemma locally",
+    "section": "8.2 What I tried",
+    "text": "8.2 What I tried",
+    "crumbs": [
+      "Making it better",
+      "<span class='chapter-number'>8</span>  <span class='chapter-title'>Running Gemma locally</span>"
+    ]
+  },
+  {
+    "objectID": "08-running-gemma.html#what-i-learned",
+    "href": "08-running-gemma.html#what-i-learned",
+    "title": "8  Running Gemma locally",
+    "section": "8.3 What I learned",
+    "text": "8.3 What I learned",
+    "crumbs": [
+      "Making it better",
+      "<span class='chapter-number'>8</span>  <span class='chapter-title'>Running Gemma locally</span>"
+    ]
+  },
+  {
+    "objectID": "08-running-gemma.html#sources",
+    "href": "08-running-gemma.html#sources",
+    "title": "8  Running Gemma locally",
+    "section": "8.4 Sources",
+    "text": "8.4 Sources",
+    "crumbs": [
+      "Making it better",
+      "<span class='chapter-number'>8</span>  <span class='chapter-title'>Running Gemma locally</span>"
+    ]
+  },
+  {
+    "objectID": "09-lora.html",
+    "href": "09-lora.html",
+    "title": "9  Fine-tuning with LoRA",
+    "section": "",
+    "text": "9.1 What I want to understand",
+    "crumbs": [
+      "Making it better",
+      "<span class='chapter-number'>9</span>  <span class='chapter-title'>Fine-tuning with LoRA</span>"
+    ]
+  },
+  {
+    "objectID": "09-lora.html#what-i-want-to-understand",
+    "href": "09-lora.html#what-i-want-to-understand",
+    "title": "9  Fine-tuning with LoRA",
+    "section": "",
+    "text": "What is LoRA, and how is it different from full fine-tuning?\nHow do I build training data without leaking test answers?\nDid it help on tasks it never saw?",
+    "crumbs": [
+      "Making it better",
+      "<span class='chapter-number'>9</span>  <span class='chapter-title'>Fine-tuning with LoRA</span>"
+    ]
+  },
+  {
+    "objectID": "09-lora.html#what-i-tried",
+    "href": "09-lora.html#what-i-tried",
+    "title": "9  Fine-tuning with LoRA",
+    "section": "9.2 What I tried",
+    "text": "9.2 What I tried",
+    "crumbs": [
+      "Making it better",
+      "<span class='chapter-number'>9</span>  <span class='chapter-title'>Fine-tuning with LoRA</span>"
+    ]
+  },
+  {
+    "objectID": "09-lora.html#what-i-learned",
+    "href": "09-lora.html#what-i-learned",
+    "title": "9  Fine-tuning with LoRA",
+    "section": "9.3 What I learned",
+    "text": "9.3 What I learned",
+    "crumbs": [
+      "Making it better",
+      "<span class='chapter-number'>9</span>  <span class='chapter-title'>Fine-tuning with LoRA</span>"
+    ]
+  },
+  {
+    "objectID": "09-lora.html#sources",
+    "href": "09-lora.html#sources",
+    "title": "9  Fine-tuning with LoRA",
+    "section": "9.4 Sources",
+    "text": "9.4 Sources",
+    "crumbs": [
+      "Making it better",
+      "<span class='chapter-number'>9</span>  <span class='chapter-title'>Fine-tuning with LoRA</span>"
+    ]
+  },
+  {
+    "objectID": "10-results.html",
+    "href": "10-results.html",
+    "title": "10  Results",
+    "section": "",
+    "text": "10.1 What I want to understand",
+    "crumbs": [
+      "Looking back",
+      "<span class='chapter-number'>10</span>  <span class='chapter-title'>Results</span>"
+    ]
+  },
+  {
+    "objectID": "10-results.html#what-i-want-to-understand",
+    "href": "10-results.html#what-i-want-to-understand",
+    "title": "10  Results",
+    "section": "",
+    "text": "Final score and rank\nWhat moved the score, and what didn’t\nWhat I’d do differently",
+    "crumbs": [
+      "Looking back",
+      "<span class='chapter-number'>10</span>  <span class='chapter-title'>Results</span>"
+    ]
+  },
+  {
+    "objectID": "10-results.html#what-i-tried",
+    "href": "10-results.html#what-i-tried",
+    "title": "10  Results",
+    "section": "10.2 What I tried",
+    "text": "10.2 What I tried",
+    "crumbs": [
+      "Looking back",
+      "<span class='chapter-number'>10</span>  <span class='chapter-title'>Results</span>"
+    ]
+  },
+  {
+    "objectID": "10-results.html#what-i-learned",
+    "href": "10-results.html#what-i-learned",
+    "title": "10  Results",
+    "section": "10.3 What I learned",
+    "text": "10.3 What I learned",
+    "crumbs": [
+      "Looking back",
+      "<span class='chapter-number'>10</span>  <span class='chapter-title'>Results</span>"
+    ]
+  },
+  {
+    "objectID": "10-results.html#sources",
+    "href": "10-results.html#sources",
+    "title": "10  Results",
+    "section": "10.4 Sources",
+    "text": "10.4 Sources",
+    "crumbs": [
+      "Looking back",
+      "<span class='chapter-number'>10</span>  <span class='chapter-title'>Results</span>"
+    ]
+  },
+  {
+    "objectID": "experiment-log.html",
+    "href": "experiment-log.html",
+    "title": "Experiment log",
+    "section": "",
+    "text": "One row per run. Change one thing at a time.\n\n\n\nDate\nVersion\nWhat changed\nLocal score\nKaggle score\nNotes\n\n\n\n\n\nv0\nBaseline",
+    "crumbs": [
+      "Appendices",
+      "Experiment log"
+    ]
+  },
+  {
+    "objectID": "glossary.html",
+    "href": "glossary.html",
+    "title": "Glossary",
+    "section": "",
+    "text": "Plain-English definitions, added as I meet each term.\n\n\n\n\n\n\n\nTerm\nMeaning\n\n\n\n\nAgent loop\nThe model reads, picks a tool, sees the result, and repeats until done\n\n\nLoRA\nA small add-on trained on top of a model, instead of retraining the whole model",
+    "crumbs": [
+      "Appendices",
+      "Glossary"
+    ]
+  }
+]
