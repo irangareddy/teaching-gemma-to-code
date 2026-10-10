@@ -1,0 +1,43 @@
+project:
+  type: book
+  output-dir: _book
+
+book:
+  title: "Teaching Gemma to Code"
+  subtitle: "A handbook for turning Gemma 4 into a coding agent in a Kaggle competition"
+  author: "Ranga Reddy Nukala"
+  date: last-modified
+  repo-url: https://github.com/irangareddy/teaching-gemma-to-code
+  repo-subdir: book
+  repo-actions: [edit, issue]
+  chapters:
+    - index.qmd
+    - part: "How agents work"
+      chapters:
+        - 01-agent-loop.qmd
+        - 02-tools.qmd
+        - 03-context.qmd
+        - 04-prompts-and-skills.qmd
+    - part: "Measuring"
+      chapters:
+        - 05-evaluation.qmd
+        - 06-error-analysis.qmd
+    - part: "Making it better"
+      chapters:
+        - 07-test-first-fixes.qmd
+        - 08-running-gemma.qmd
+        - 09-lora.qmd
+    - part: "Looking back"
+      chapters:
+        - 10-results.qmd
+  appendices:
+    - experiment-log.qmd
+    - glossary.qmd
+
+format:
+  html:
+    theme:
+      light: cosmo
+      dark: darkly
+    code-copy: true
+    toc: true

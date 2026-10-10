@@ -1,0 +1,7 @@
+book/_book/
+book/.quarto/
+*.zip
+.env
+__pycache__/
+.DS_Store
+eval/runs/
